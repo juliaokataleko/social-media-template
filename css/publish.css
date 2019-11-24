@@ -1,0 +1,20 @@
+
+#main-publish {
+    height: calc(100% - 6em) !important;
+}
+
+#studioEditor {
+    background: #222333;
+}
+#imageEditor {
+    width: 100%;
+    height: 570px;
+    border: 0px solid #222333;
+    margin: 0 auto;
+    margin-top: 0.3em;
+    background: #dddddd;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

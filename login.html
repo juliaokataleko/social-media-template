@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Painel de Controle</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+</head>
+<body>
+    <div class="login">
+        <div class="banner-login">
+            <h2>Connectando pessoas</h2>
+        </div>
+        <div class="login-form">
+            <div class="login-form-wrapper">
+                <a href="index.html" class="brand mt-4 text-center">Kataleko</a>
+                <hr>
+                <div class="login-title">
+                    <h2>Log in</h2>
+                    <a href="register.html">Regista-te</a>
+                </div>
+                <form autocomplete="off">
+                    <div class="form-group">
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite seu email">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" id="palavra-passe" placeholder="Digite sua palavra-passe">
+                    </div>
+                    <button type="button" class="btn">Entrar</button>
+                </form>
+                <hr>
+                <a href="forgot.html">Esqueceste sua palavra-passe?</a>
+            </div>
+        </div>
+    </div>
+    <script src="plugins/bootstrap/js/js/bootstrap.min.js"></script>
+    <script>
+        let button = document.querySelector('form button.btn');
+        button.addEventListener("click", () => {
+            location.href = "index.html"
+        })
+    </script>
+</body>
+</html>

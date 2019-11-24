@@ -1,0 +1,35 @@
+.notifications-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    margin-bottom: 1.5em;
+    border-top: 1px solid #dddddd;
+    padding: 1em;
+    width: 100%;
+    background: #ffffff;
+}
+
+.single-notification-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.single-notification-box img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border: #ddd 1px solid;
+    border-radius: 2px;
+}
+
+.single-notification-box .comment-desc {
+    font-size: 13px;
+}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instatheme</title>
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/plugins/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/all.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand">Kataleko</a>
+        <div class="search-box autocomplete">
+            <input type="text" name="query" id="myQuery" placeholder="@alguma_coisa">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="links">
+            <a href="#" id="searchButton" class="publish"><i class="fas fa-search"></i></a>
+            <a href="publish.html" class="publish"><i class="fas fa-edit"></i></a>
+            <div class="btn-group">
+                <a href="#" class="dropdown-toggle menuOpen" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="publish.html" class="dropdown-item">Publicar foto</a>
+                    <a href="profile.html" class="dropdown-item">Perfil</a>
+                    <a href="people.html" class="dropdown-item">Pessoas</a>
+                    <a href="notifications.html" class="dropdown-item">Notificações(23)</a>
+                    <a href="settings.html" class="dropdown-item">Definições</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="faq.html" class="dropdown-item">Centro de ajuda</a>
+                    <a href="login.html" class="dropdown-item">Terminar sessão</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Atenção</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente elimanar este conteúdo?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-danger"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-profile">
+        <!--<h2 class="main-title">Perfil</h2>-->
+        <div class="profile">
+            <div class="sidebar-profile">
+                <div class="desktop">
+                    <div class="profile-img">
+                    </div>
+                    <span class="fullname">Julião F. Kataleko</span><br>
+                    <span><a href="#">@july_kata</a></span>
+                    <span class="username"><a href="settings.html">Definições</a></span>
+                    <div class="tab mobileLeftSidebar">
+                        <a href="#" class="tablinks"
+                            onclick="openSection(event, 'about')">Biografia</a>
+                        <a href="#" class="tablinks"
+                            onclick="openSection(event, 'posts')">Fotos</a>
+                        <a href="#" class="tablinks"
+                            onclick="openSection(event, 'likes')">Conexões(240)</a>
+                        <a href="#" class="tablinks"
+                            onclick="openSection(event, 'contacts')">Contactos</a>
+                        <a href="#" class="tablinks"
+                            onclick="openSection(event, 'block')">Bloquear</a>
+                    </div>
+                    <div class="tab desktopLeftSidebar">
+                        <a href="#" class="list-group-item list-group-item-action tablinks"
+                            onclick="openSection(event, 'about')">Biografia</a>
+                        <a href="#" class="list-group-item list-group-item-action tablinks"
+                            onclick="openSection(event, 'posts')">Fotos</a>
+                        <a href="#" class="list-group-item list-group-item-action tablinks"
+                            onclick="openSection(event, 'likes')">Conexões(240)</a>
+                        <a href="#" class="list-group-item list-group-item-action tablinks"
+                            onclick="openSection(event, 'contacts')">Contactos</a>
+                        <a href="#" class="list-group-item list-group-item-action tablinks"
+                            onclick="openSection(event, 'block')">Bloquear</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div id="posts" class="tabcontent" style="display: block;">
+                    <h2 class="main-title">Fotos de @july_kata</h2>
+
+                    <div class="post-section">
+                        <div class="header-post">
+                            <a href="profile.html"><img src="/img/user-avatar.jpg" alt=""></a>
+                            <div class="user-details">
+                                <div class="left">
+                                    <div class="fullname">
+                                        <a href="profile.html">Julião F. Kataleko</a>
+                                    </div>
+                                    <span class="username"><a href="profile.html">@july_kata</a></span>
+                                </div>
+                                <div class="right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#">Editar</a>
+                                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                                data-target="#deleteModal">Apagar</a>
+                                            <a class="dropdown-item" href="#">Guardar</a>
+                                            <a class="dropdown-item text-danger" href="report.html">Denunciar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-post">
+                            <a href="post.html"><img src="/img/post5.jpg" alt=""></a>
+                            <span>Algum texto qualquer com <a href="#">#hashtag</a>
+                                e mais algumas coisas. <br> as <time datetime="21-11-2019 00:55">21-11-2019
+                                    00:55</time></span>
+                        </div>
+                        <div class="bottom-post">
+                            <i class="far fa-heart"></i> <span>23</span> <i class="fas fa-paper-plane"></i>
+                            <span>234</span>
+                        </div>
+                    </div>
+
+                    <div class="post-section">
+                        <div class="header-post">
+                            <a href="profile.html"><img src="/img/user-avatar.jpg" alt=""></a>
+                            <div class="user-details">
+                                <div class="left">
+                                    <div class="fullname">
+                                        <a href="profile.html">Julião F. Kataleko</a>
+                                    </div>
+                                    <span class="username"><a href="profile.html">@july_kata</a></span>
+                                </div>
+                                <div class="right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#">Editar</a>
+                                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                                data-target="#deleteModal">Apagar</a>
+                                            <a class="dropdown-item" href="#">Guardar</a>
+                                            <a class="dropdown-item text-danger" href="report.html">Denunciar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-post">
+                            <a href="post.html"><img src="/img/post4.jpg" alt=""></a>
+                            <span>Algum texto qualquer com <a href="#">#hashtag</a>
+                                e mais algumas coisas. <br> as <time datetime="21-11-2019 00:55">21-11-2019
+                                    00:55</time></span>
+                        </div>
+                        <div class="bottom-post">
+                            <i class="far fa-heart"></i> <span>23</span> <i class="fas fa-paper-plane"></i>
+                            <span>234</span>
+                        </div>
+                    </div>
+
+                </div><!-- Posts section -->
+
+                <div id="about" class="tabcontent">
+                    <h2 class="main-title">Bibiografia</h2>
+                    <a href="#" class="tablinks" onclick="openSection(event, 'edit-profile')">Editar perfil</a><br>
+                    <a href="#" class="tablinks" onclick="openSection(event, 'edit-avatar')">Editar foto</a>
+                    <hr>
+                    <p>Julião F. Kataleko - @july_kata</p>
+                    <p>Naturalidade: Benguela</p>
+                    <p>Idade: 24</p>
+                    <hr>
+                    <p>Olá pessoal sou um jovem muito respeitável. Gosto muito de estar pausado..</p>
+                </div>
+
+                <div id="contacts" class="tabcontent">
+                    <h2 class="main-title">Contactos</h2>
+                    <p><i class="fas fa-phone"></i> : +244 922 660 717</p>
+                    <p><i class="fas fa-inbox"></i> : Juliofeli78@gmail.com</p>
+                    <p><i class="fas fa-globe"></i> : Https://juliaokataleko.github.io</p>
+                    <p><i class="fab fa-facebook"></i> : @juliaokataleko</p>
+                    <p><i class="fab fa-linkedin"></i> : @juliaokataleko</p>
+                    <p><i class="fab fa-twitter"></i> : @juliaokataleko</p>
+                </div>
+
+                <div id="block" class="tabcontent">
+                    <h3>Deseja bloquear <br><a href="#">@juliao_kataleko?</a></h3>
+                    <button class="btn btn-danger">Prosseguir</button>
+                </div>
+
+                <div id="edit-profile" class="tabcontent">
+                    <h2>Editar Perfil</h2>
+                    <hr>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                                placeholder="Digite seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="text" class="form-control" id="phone" aria-describedby="emailHelp"
+                                placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" id="" class="form-control" placeholder="Descrição..." cols="30"
+                                rows="10"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary">Actualizar perfil</button>
+                    </form>
+                </div>
+
+
+                <div id="edit-avatar" class="tabcontent">
+                    <h2 class="main-title">Editar foto de perfil</h2>
+                    <form>
+                        <div class="custom-file">
+                            <input type="file" name="avatar" id="customFile" class="custom-file-input">
+                            <label for="customFile" class="custom-file-label">Escolher um ficheiro</label>
+                        </div>
+                        <button type="submit" class="mt-4 btn btn-primary">Carregar foto</button>
+
+                    </form>
+                </div>
+
+                <div id="likes" class="tabcontent">
+                    <h2 class="main-title">Pessoas conectadas</h2>
+
+                    <div class="people-list">
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="person-box">
+                                <div class="cover"></div>
+                                <div class="info">
+                                    <div class="person-img"></div>
+                                    <div class="person-info">
+                                        <span> <a href="profile.html">Julião kataleko</a></span>
+                                        <span class="username"><a href="profile.html">@july_kata</a></span>
+                                    </div>
+                                </div>
+                                <h4>Web Developer</h4>
+                                <button class=" form-control btn btn-primary" type="button"><i
+                                        class="fas fa-plus-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/plugins/bootstrap/js/js/jquery.js"></script>
+    <script src="/plugins/bootstrap/js/js/popper.js"></script>
+    <script src="/plugins/bootstrap/js/js/bootstrap.min.js"></script>
+    <script src="/js/tabs.js"></script>
+    <script src="js/search-autocomplete.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

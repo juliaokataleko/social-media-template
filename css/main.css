@@ -1,0 +1,230 @@
+main {
+    padding: 3em;
+    width: 100%;
+    height: calc(100% - 3em);
+    overflow-y: auto;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+#main-profile,
+#main-settings,
+#main-people
+{
+    max-width: 800px;
+}
+
+.main-title {
+    margin-bottom: 20px;
+    border-bottom: 4px solid #444444;
+    padding-bottom: 10px;
+    font-size: 22px;
+}
+
+.main-title i {
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+
+.post-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    margin-bottom: 1.5em;
+}
+
+.header-post {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:flex-start;
+    padding: 0.5em;
+    background: #fafafa;
+    width: 100%;
+}
+
+.header-post .user-details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-post .user-details > .right {
+    margin-right: 5px;
+}
+
+.header-post img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border: #ddd 1px solid;
+    border-radius: 2px;
+}
+
+.header-post span.username {
+    font-size: 11px;
+}
+
+.header-post button {
+    background: transparent;
+    border: 0;
+    color: #444444;
+}
+
+.header-post button:hover,
+.header-post button:focus
+{
+    background: transparent;
+    border: 0;
+    color: #1b6c8b;
+}
+
+.post-section .body-post, .single-comment-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.post-section .body-post span {
+    padding: 10px;
+}
+
+.post-section .body-post img {
+    width: 100%;
+}
+
+.post-section .bottom-post {
+    border-top: 1px solid #dddddd;
+    padding: 1em;
+    width: 100%;
+    background: #ffffff;
+}
+
+.post-section .bottom-post .comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.comment-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background: #ffffff;
+    width: 100%;
+    border: 2px solid #dde7eb;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comments input, .comment-box input {
+    width: 100%;
+    line-height: 1.2em;
+    border: 0;
+    padding: 0 9px;
+    outline: none;
+}
+
+.comments button, .comment-box button {
+    background: #ffffff;
+    border: 0;
+    padding: 10px;
+}
+
+.post-section .bottom-post span {
+    margin-right: 10px;
+}
+
+.post-section .bottom-post i {
+    font-size: 20px;
+}
+
+
+.single-comment-box, .answer-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.single-comment-box:last-child, .answer-box:last-child {
+    border-bottom: 0px solid #ddd;
+}
+
+.single-comment-box img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border: #ddd 1px solid;
+    border-radius: 2px;
+}
+
+.single-comment-box .comment-desc {
+    font-size: 13px;
+}
+
+#answers {
+    border-left: 2px solid #108ad6;
+    padding-left: 1em;
+}
+
+.answer-box {
+    margin: 13px 0;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width:768px) {
+    main {
+        padding: 1.3em;
+    }
+}
+
+.footer {
+    line-height: 3em;
+    padding: 0 3em;
+    background: #000000;
+    text-align: center;
+    color: #fefefe;
+}
+
+/* Sidebar  left */
+
+.mobileLeftSidebar {
+    display: none;
+}
+
+.desktopLeftSidebar {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobileLeftSidebar {
+        display: block;
+        padding: 2em;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        padding-bottom: 2em !important;
+    }
+    .mobileLeftSidebar a {
+        padding: 10px;
+    }
+    .desktopLeftSidebar {
+        display: none;
+    }
+    .desktopLeftSidebar {
+        display: none;
+    }
+}

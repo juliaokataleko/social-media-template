@@ -1,0 +1,95 @@
+/* people section */
+
+.people-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.people-list > div {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.person-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e4e5e6;
+    padding: 0;
+}
+
+.person-box .cover {
+    height: 100px;
+    background-color: #1d7eb6;
+    width: 100%;
+    z-index: 1;
+}
+
+.person-box .cover:hover {
+    height: 100px;
+    background-color: #1c4b66;
+    width: 100%;
+    transform: scale(0.99);
+    transition: ease-in-out .4s;
+}
+
+.person-box .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 01);
+    margin-bottom: 15px;
+    margin-top: -35px;
+    z-index: 2;
+}
+
+.person-box .person-img {
+    height: 70px;
+    width: 70px;
+    background: #dddddd;
+    margin-right: 5px;
+    background-image: url('/img/user-avatar.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.person-box button {
+    border-radius: 0;
+    line-height: 1em;
+    background: #ffffff;
+    border: none;
+    color: #444444;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 10px;
+    color: #ffffff;
+}
+
+.person-info .username a {
+    color: #2f454b;
+    font-size: 13px;
+}
+
+@media (max-width:768px) {
+    .person-box .person-img {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .person-info {
+        padding: 10px;
+    }
+}
